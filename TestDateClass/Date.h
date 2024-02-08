@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class Date
 {
@@ -20,4 +21,7 @@ public:
     std::string toString();
     bool operator==(Date otherDate);
     bool operator>(Date otherDate);
+    friend std::ostream& operator<<(std::ostream& os, Date& obj);
 };
+
+

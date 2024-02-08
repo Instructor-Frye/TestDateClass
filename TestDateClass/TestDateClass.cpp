@@ -10,12 +10,10 @@ int main()
 
 	if (today > deadline)
 	{
-		std::cout << "The deadline passed.\n";
+		std::cout << "The deadline, " << deadline <<", has passed.\n";
 	}
 	else
 	{
 		std::cout << "The deadline has not passed\n";
 	}
-	
-
 }

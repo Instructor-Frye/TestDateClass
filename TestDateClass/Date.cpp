@@ -1,5 +1,6 @@
 #include "Date.h"
 #include <string>
+#include <iostream>
 
 Date::Date()
 {
@@ -134,4 +135,9 @@ bool Date::operator>(Date otherDate)
 }
 
 
-
+std::ostream& operator<<(std::ostream& os, Date& date)
+{
+	// write obj to stream
+	os << date.toString();
+	return os;
+}
