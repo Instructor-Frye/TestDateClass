@@ -8,6 +8,13 @@ Date::Date()
 	year = 1753;
 }
 
+Date::Date(int newMonth, int newDay, int newYear)
+{
+	Date();
+	setDate(newMonth, newDay, newYear);
+}
+
+
 int Date::getMonth()
 {
 	return month;
@@ -92,4 +99,39 @@ std::string Date::toString()
 		std::to_string(day) + "/" +
 		std::to_string(year);
 }
+
+bool Date::operator==(Date otherDate)
+{
+	if (month == otherDate.month &&
+		day == otherDate.day &&
+		year == otherDate.year)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Date::operator>(Date otherDate)
+{
+	if (year > otherDate.year)
+	{
+		return true;
+	}
+	else if (year == otherDate.year &&
+		month > otherDate.month)
+	{
+		return true;
+	}
+	else if (year == otherDate.year &&
+		month == otherDate.month &&
+		day > otherDate.day)
+	{
+		return true;
+	}
+	
+	return false;
+}
+
+
 
